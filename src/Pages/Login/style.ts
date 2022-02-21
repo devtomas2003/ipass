@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+type propsBtnLogin = {
+    isAtive: boolean;
+};
+
 export const Container = styled.div`
     display: flex;
     flex-direction: row;
@@ -35,7 +39,7 @@ export const LoginInput = styled.input`
 `;
 
 export const LoginBtn = styled.div`
-    background: #006fb9;
+    background: ${(props: propsBtnLogin) => props.isAtive ? '#006fb9' : '#e0e7eb'};
     display: flex;
     flex-direction: row;
     margin-top: 15px;
@@ -45,10 +49,11 @@ export const LoginBtn = styled.div`
     align-items: center;
     user-select: none;
     cursor: pointer;
+    border-radius: 5px;
+    color: ${(props: propsBtnLogin) => props.isAtive ? '#fff' : '#333'};
 `;
 
 export const BtnText = styled.p`
-    color: #fff;
     font-size: 18px;
     margin-left: 10px;
     font-weight: bold;
@@ -58,4 +63,38 @@ export const StatePrivSelect = styled.p`
     align-self: flex-start;
     margin-left: calc(5% - 10px);
     margin-top: 5px;
+    visibility: hidden; /* Remover durante o js */
+`;
+
+export const BoxAccountActions = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 94%;
+    margin-top: 10px;
+`;
+
+export const LinkAction = styled.a`
+    text-decoration: underline;
+    cursor: pointer;
+`;
+
+export const CopyRight = styled.p`
+    align-self: flex-end;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-right: 3%;
+`;
+
+export const FlagsBox = styled.div`
+    align-self: flex-start;
+    margin-left: 3%;
+    margin-top: 50px;
+`;
+
+export const Flag = styled.img`
+    cursor: pointer;
+    &:not(:first-child){
+        margin-left: 3px;
+    }
 `;
