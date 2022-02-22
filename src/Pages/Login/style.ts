@@ -1,8 +1,17 @@
 import styled from "styled-components";
+import Background from "../../assets/bg.png";
 
 type propsBtnLogin = {
     isAtive: boolean;
 };
+
+export const PageContainer = styled.div`
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url(${Background}) no-repeat;
+    background-position-y: 78%;
+`;
 
 export const Container = styled.div`
     display: flex;
@@ -57,13 +66,6 @@ export const BtnText = styled.p`
     font-size: 18px;
     margin-left: 10px;
     font-weight: bold;
-`;
-
-export const StatePrivSelect = styled.p`
-    align-self: flex-start;
-    margin-left: calc(5% - 10px);
-    margin-top: 5px;
-    visibility: hidden; /* Remover durante o js */
 `;
 
 export const BoxAccountActions = styled.div`
